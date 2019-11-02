@@ -8,16 +8,14 @@ def google_search(query):
     #db_data = open('db/sql_injection_list.txt', 'r')
 
     # debug
-    search_data = query + ' /lire.php?rub='
+    search_data = query# + ' /lire.php?rub='
     print(search_data)
-
-    iterable = search(search_data, pause=4.0, num=1, user_agent="Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.1; Trident/4.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; Media Center PC 6.0)")
-    _exhausted = object()
-
-    if next(iterable, _exhausted) == _exhausted:
-        print("無いよ")
-    else:
-        print("あるよ")
+    
+    #iterable = search(search_data, pause=4.0, num=1, user_agent="Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.1; Trident/4.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; Media Center PC 6.0)")
+    iterable = (i for i in [])
+    
+    if next(iterable, None) is None:
+        print('Not initiated')
         
 """
     for data in db_data:
@@ -27,8 +25,6 @@ def google_search(query):
         else:
             print(search_data)
 """
-    #for url in search(query, pause=4.0, num=limit, user_agent="Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.1; Trident/4.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; Media Center PC 6.0)"):
-    #    print(url)
 
 def main():
     args = sys.argv
